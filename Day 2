@@ -1,0 +1,31 @@
+1. Write a program to find the largest element in an array.
+l=[5,9,4,2,1]
+print(max(l))
+--------------------------------------
+2. Write a program to check if a string is a palindrome.
+s="level"
+k=s[::-1]
+if k==s:
+  print("palindrome")
+else:
+  print("not a palindrome")
+----------------------------------------------
+3. Write a program to swap two variables without using a temporary variable.
+a=int(input())
+b=int(input())
+print("a = ",(a+b)-a)
+print("b = ",(a+b)-b)
+----------------------------
+4. Write a program to calculate the area of a triangle.
+base=int(input())
+height=int(input())
+print(1/2*(base)*(height))
+-----------------------------------------------
+5. Write a program to check if a year is a leap year.
+yr=int(input())
+if yr%4==0 and yr%100!=0:
+  print("leap year")
+elif yr%400==0 and yr%100==0:
+  print("leap year")
+else:
+  print("not a leap year")
