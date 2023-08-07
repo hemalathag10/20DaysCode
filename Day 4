@@ -1,0 +1,134 @@
+1. Write a program to implement a binary search algorithm.
+
+def binary_search(arr, low, high, x):
+  if high >= low:
+    mid = (high + low) // 2
+    if arr[mid] == x:
+      return mid
+    elif arr[mid] > x:
+      return binary_search(arr, low, mid - 1, x)
+    else:
+      return binary_search(arr, mid + 1, high, x)
+  else:
+    return -1
+ 
+arr = [ 2, 3, 4, 10, 40 ]
+x = 10
+result = binary_search(arr, 0, len(arr)-1, x)
+ 
+if result != -1:
+    print("Element is present at index", str(result))
+else:
+    print("Element is not present in array")
+------------------------------------------------------------------------------------------
+2. Write a program to find the GCD (Greatest Common Divisor) of two numbers.
+
+a=int(input())
+b=int(input())
+if a>b:
+  t=a
+elif b>a:
+  t=b
+gcd=0
+for i in range(1,t+1):
+  if a%i==0 and b%i==0:
+    gcd=i
+print(gcd)
+********************************
+import math
+ 
+# prints 12
+print("The gcd of 60 and 48 is : ", end="")
+print(math.gcd(60, 48))
+----------------------------------------------------------------------------------------------------------------------------------------------------
+3. Write a program to find the Fibonacci sequence up to a given number.
+
+n=int(input())
+a,b=0,1
+print(a,b,end=" ")
+for i in range(2,n+1):
+  c=a+b
+  a=b
+  b=c
+  print(c,end=" ")
+----------------------------------------------------------------------------------------------------------------
+4. Write a program to check if a number is a prime number.
+
+n=int(input())
+c=1
+for i in range(2,n//2):
+  if n%i==0:
+    c=0
+    break
+if c:
+  print("yes it is prime number")
+else:
+  print("no")
+----------------------------------------------------------------------------------------------------------------
+5. Write a program to implement a stack data structure.
+
+Using list to Create a Python Stack
+-----------------------------------
+myStack = []
+myStack.append('a')
+myStack.append('b')
+myStack.append('c')
+
+>>>myStack
+['a', 'b', 'c']
+
+myStack.pop()
+'c'
+myStack.pop()
+'b'
+myStack.pop()
+'a'
+
+myStack.pop()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+IndexError: pop from empty list
+
+Using collections.deque to Create a Python Stack
+------------------------------------------------
+>>> from collections import deque
+>>> myStack = deque()
+
+>>> myStack.append('a')
+>>> myStack.append('b')
+>>> myStack.append('c')
+
+>>> myStack
+deque(['a', 'b', 'c'])
+
+>>> myStack.pop()
+'c'
+>>> myStack.pop()
+'b'
+>>> myStack.pop()
+'a'
+
+>>> myStack.pop()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+IndexError: pop from an empty deque
+
+ LifoQueue uses .put() and .get() to add and remove data from the stack:
+-----------------------------------------------------------------------
+>>> from queue import LifoQueue
+>>> myStack = LifoQueue()
+
+>>> myStack.put('a')
+>>> myStack.put('b')
+>>> myStack.put('c')
+
+>>> myStack
+<queue.LifoQueue object at 0x7f408885e2b0>
+
+>>> myStack.get()
+'c'
+>>> myStack.get()
+'b'
+>>> myStack.get()
+'a'
+
