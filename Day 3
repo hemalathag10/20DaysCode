@@ -1,0 +1,92 @@
+1. Write a program to find the second largest element in an array.
+l=int(input())
+a=[]
+for i in range(l):
+  a.append(int(input()))
+a.sort()
+print(a)
+print(a[l-2])
+----------------------
+2. Write a program to sort an array in ascending order using the bubble sort algorithm.
+
+l=int(input())
+a=[]
+for i in range(l):
+  a.append(int(input()))
+for i in range(l):
+  for j in range(i+1,l):
+    if a[i]>a[j]:
+      a[i],a[j]=a[j],a[i]
+print(a)
+--------------------------------
+3. Write a program to reverse a linked list.
+class Node:
+  def __init__(self,data=None,next=None):
+    self.data=data
+    self.next=next
+class LL:
+  def __init__(self):
+    self.head=None
+
+  def insert(self,data):
+    newnode=Node(data)
+    if(self.head):
+      current=self.head
+      while(current.next):
+        current=current.next
+      current.next=newnode
+    else:
+      self.head=newnode
+
+  def printLL(self):
+    current=self.head
+    while(current):
+      print(current.data,end="->")
+      current=current.next
+
+def rev(list):
+  pre=None
+  cu=list.head
+  after=cu.next
+  while(cu):
+    cu.next=pre
+    pre=cu
+    cu=after
+    if after:
+      after=after.next
+  list.head=pre
+l=LL()
+l.insert(5)
+l.insert(4)
+l.insert(3)
+l.insert(2)
+l.insert(1)
+l.printLL()
+print("after reversed")
+rev(l)
+l.printLL()
+-------------------------------------------------------------
+4. Write a program to find the factorial of a number using recursion.
+def fact(n):
+  if n<0:
+    return "factorial does nnot exist"
+  elif n==0:
+    return 1
+  elif n==1:
+    return n
+  else:
+    return n*fact(n-1)
+
+n=int(input())
+r=fact(n)
+print("ans: ",r)
+-------------------------------------------------------
+5. Write a program to check if a given string is an anagram.
+s=input()
+s2=input()
+a=sorted(s)
+b=sorted(s2)
+if a==b:
+  print("True")
+else:
+  print("false")
