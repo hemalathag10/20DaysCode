@@ -133,3 +133,12 @@ for i in s:
     print(k[::-1])
     break
 ==============================================================================================
+6. 2nd largest+3rd minimum = sum
+
+l=list(map(int,input().split()))
+big=sorted(l)
+sec=big[len(l)-2]
+print(sec)
+mini=big[2]
+print(mini)
+print(sec+mini)
