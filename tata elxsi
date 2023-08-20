@@ -1,0 +1,135 @@
+1. Problem Statement :
+
+You have write a function that accepts, a string which length is “len”, the string has some “#”, in it you have to move all the hashes to the front of the string and return the whole string back and print it.
+
+char* moveHash(char str[],int n);
+
+Example :
+Sample Test Case
+Input :
+Move#Hash#to#Front
+Output :
+###MoveHashtoFront
+
+---------------------------
+ s=input()
+k=s.count('#')
+st=""
+for i in s:
+  if i!='#':
+    st=st+i
+ans=('#'*k)+st
+print(ans)
+=====================================================================================
+2. You have two numbers number1 and number2, your job is to check the number of borrow operations needed for subtraction of number1 from number2. If the subtraction is not possible then return the string not possible.
+
+Example :
+
+754
+658
+
+Answer :
+2
+
+654
+666
+
+Answer :
+Not possible
+-------------------------------------------------
+n1=int(input())
+n2=int(input())
+c=0
+if n1<n2:
+  print("not possible")
+else:
+  t=0
+  while(n1>0):
+    k1=0
+    k2=n2%10
+    if t:
+      k1=n1%10-1
+    else:
+      k1=n1%10
+    if k1<k2:
+      t+=1
+      c+=1
+    else:
+      t=0
+    n1=n1//10
+    n2=n2//10
+  print(c)
+======================================================================================================
+3. You’re given a function that accepts the following, a string1, its length and a character c. Your job is to replace all the occurrences of character c in string1 and capitalize it or decapitalize it based on the character c.
+
+Input :
+hello world
+l
+Output :
+heLLo worLd
+
+Input :
+prepinsta
+p
+Output :
+PrePinsta
+--------------------------
+ s=input()
+c=input()
+if c.islower():
+  k=s.replace(c,c.upper())
+else:
+  k=s.replace(c,c.lower())
+print(k)
+==========================================================================================
+4. You’re given a string where multiple characters are repeated consecutively. You’re supposed to reduce the size of this string using mathematical logic given as in the example below :
+
+Input :
+aabbbbeeeeffggg
+
+Output:
+a2b4e4f2g3
+
+Input :
+abbccccc
+
+Output:
+ab2c5
+-------------------------------------
+s=input()
+d={}
+for i in s:
+  if i not in d:
+    d[i]=s.count(i)
+for a,b in d.items():
+  if int(b)!=1:
+    print(a,end="")
+    print(b,end="")
+  else:
+    print(a,end="")
+============================================================================================
+5. You’re given a string, you’ve to print additional characters needed to make that string a palindrome.
+
+A Palindrome is a sequence of characters that has the property of reading the same in either direction.
+
+Input :
+abede
+Output :
+ba
+
+Sample Input :
+abcfe
+
+Sample output :
+fcba
+----------------------------------------
+s=input()
+a=""
+k=""
+for i in s:
+  k=k+i
+  a=s+k[::-1]
+  if a==a[::-1]:
+    print(k[::-1])
+    break
+==============================================================================================
